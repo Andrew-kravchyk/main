@@ -6,13 +6,17 @@ lst_unique = []
 
 def function_lst_unique():
 
-    lst = [1,2,3,4,5,6,3,4,5,7,6,5,4,3,4,5,4,3, 'Привіт', 'анаконда']
-    str = ''
-    for a in lst:
-        if type(a) == int:
-            lst[-2] = str.lower()
-  
-    print(lst)
+    lst = [1,2,3,4,5,6,3,4,5,7,6,5,4,3,4,5,4,3,11, 'Привіт', 'Анаконда']
+    for d in lst:
+        if type(d) == str:
+            
+            d_lower = d.lower()
+            d_bigger = d
+            lst.append(d_lower)
+            lst.remove(d_bigger)
+            
+     
+        
     global lst_unique 
     lst_in_set = set()    
     for item in lst :
@@ -25,17 +29,29 @@ def function_lst_unique():
 
 function_lst_unique()
 
+
 def function_lst_sort():
-    
+
+    lst_str = []
+    lst_int = []
     global lst_unique
-    lst_sorted = lst_unique.copy()
-    
-    lst_sorted.sort(key=str)
-    print(lst_sorted)
-    
-function_lst_sort()
+    lst_sort = lst_unique.copy()
+    for c in lst_sort:
+        if type(c) == int:
+            lst_int.append(c)
+        elif type(c) == str:
+            lst_str.append(c)
+
+    lst_str.sort()
+    lst_int.sort()
 
 
+   
+    return lst_int + lst_str
+    
+g = function_lst_sort()
+
+print(g)
 
     
 
