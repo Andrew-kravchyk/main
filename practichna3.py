@@ -7,19 +7,23 @@ lst_unique = []
 def function_lst_unique():
 
     lst = [1,2,3,4,5,6,3,4,5,7,6,5,4,3,4,5,4,3,11, 'Привіт', 'Анаконда']
+    lst2 = []
     for d in lst:
         if type(d) == str:
             
             d_lower = d.lower()
-            d_bigger = d
-            lst.append(d_lower)
-            lst.remove(d_bigger)
+            lst2.append(d_lower)
+        else:
+            lst2.append(d)
+    print (lst2)
+            
+            
             
      
         
     global lst_unique 
     lst_in_set = set()    
-    for item in lst :
+    for item in lst2 :
      if item  not in lst_in_set:
          lst_unique.append(item)
          lst_in_set.add(item)
