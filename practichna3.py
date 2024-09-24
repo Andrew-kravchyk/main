@@ -45,7 +45,7 @@ def function_lst_sort():
             lst_int.append(c)
         elif type(c) == str:
             lst_str.append(c)
-
+        
     lst_str.sort()
     lst_int.sort()
 
